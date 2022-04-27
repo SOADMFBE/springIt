@@ -1,42 +1,49 @@
+.user-form-cont {
+    display: flex;
+    align-items: center;
+}
 .user-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 50%;
     margin: 0 auto;
     margin-top: 4.5rem;
-    padding: 2rem 4rem;
-    background-color: $black-grey;
+    padding: 2rem 1rem;
     border: 2px solid white;
     border-image: $gradient;
     border-image-slice: 1;
     h2 {
         font-size: 2.7rem;
-        margin: 0 auto;
         margin-bottom: 1em;
     }
     input {
         color: white;
         font-size: 1rem;
-        min-width: 125px;
-        width: 90%;
+        width: 100%;
         margin: 0.5em auto;
         padding: 0.8rem;
         background-color: $black-blue;
-        &:last-child {
-            width: 40%;
-        }
     }
-    textarea {
+}
+
+.form__group {
+    width: 60%;
+    margin: 1em 0;
+    button {
+        background: $gradient;
         color: white;
-        font-size: 1rem;
-        min-width: 125px;
-        width: 90%;
-        margin: 0.5em auto;
-        padding: 0.8rem;
-        background-color: $black-blue;
+        padding: 1em 0.6em;
+        border-radius: 0.1em;
     }
-    a {
-        margin: 0.5em auto;
-        color: $font-trans;
-    }
+    
+}
+
+.btn-cont-user{
+    text-align: center;
+}
+
+#user-link {
+    top: 11rem;
+    left: 20%;
 }
