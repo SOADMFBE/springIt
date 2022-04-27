@@ -1,22 +1,21 @@
-{%extends 'main.html'%}
-{%load static%}
+{%extends 'main.html'%} {%load static%} {%block content%}
+<div class="user-form-cont">
+    <a href="{%url 'home'%}"
+        ><div id="user-link" class="home-link"
+            ><img src="{%static 'images/back.png'%}" alt="" /></div
+    ></a>
 
-
-{%block content%}
-
-
-<form action="" method="POST">
-    {%csrf_token%}
-    {%for field in form%}
-    <div class="form__group">
-        <label for="{{field.label}}">{{field.label}}</label>
-        {{field}}
-    </div>
-    {%endfor%}
-    <div class="form__action">
-        <a href="{%url 'home'%}">Cancel</a>
-        <button type="submit">Update</button>
-    </div>
-</form>
+    <form class="user-form" action="" method="POST">
+        {%csrf_token%} {%for field in form%}
+        <div class="form__group">
+            <label for="{{field.label}}">{{field.label}}</label>
+            {{field}}
+        </div>
+        {%endfor%}
+        <div class="form__action">
+            <button type="submit">Сохранить</button>
+        </div>
+    </form>
+</div>
 
 {%endblock content%}
