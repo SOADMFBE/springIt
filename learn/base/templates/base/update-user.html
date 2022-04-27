@@ -1,6 +1,6 @@
 {%extends 'main.html'%} {%load static%} {%block content%}
 <div class="user-form-cont">
-    <a href="{%url 'home'%}"
+    <a href="{{request.META.HTTP_REFERER}}"
         ><div id="user-link" class="home-link"
             ><img src="{%static 'images/back.png'%}" alt="" /></div
     ></a>

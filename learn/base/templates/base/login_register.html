@@ -20,7 +20,7 @@
         {%if page == 'login'%}
         
         <div class="login-cont">
-            <a href="{%url 'home'%}"><div class="home-link"><img src="{%static 'images/back.png'%}" alt=""></div></a>
+            <a href="{{request.META.HTTP_REFERER}}"><div class="home-link"><img src="{%static 'images/back.png'%}" alt=""></div></a>
             <form class="login_form" method="POST" action="">
                 {%csrf_token%}
                 <h2>Авторизация</h2>
