@@ -1,0 +1,136 @@
+#host-home-link {
+    top: 7rem;
+    left: 5rem;
+}
+.room-container {
+    padding: 1.4rem 7.1rem;
+    display: grid;
+    grid-template-rows: 5rem minmax(10rem, auto) auto auto;
+    hyphens: auto;
+    gap: 2rem;
+    input {
+        color: white;
+        font-size: 16px;
+        font-size: max(16px, 1em);
+        padding: 0.9em;
+        width: 90%;
+        background-color: $black-grey;
+        border: 2px solid white;
+        border-image: $gradient;
+        border-image-slice: 1;
+    }
+}
+
+.host-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 6rem;
+    margin-left: 2rem;
+    div {
+        display: flex;
+        align-items: center;
+        img {
+            margin-right: 0.5em;
+        }
+    }
+    .btn-room {
+        height: 2rem;
+        padding: 0.5rem;
+        border: 2px solid white;
+        border-image: $gradient;
+        border-image-slice: 1;
+        margin-right: 1rem;
+            
+    }
+}
+
+.room-info {
+    background-color: $black-grey;
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+    h1 {
+        font-weight: 600;
+        margin-bottom: 0.8em;
+        font-size: 1.6rem;
+    }
+}
+
+.comment-cont {
+    margin-left: 1rem;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    small {
+        color: $font-trans;
+    }
+    margin-bottom: 0.8rem;
+}
+
+.com-body {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    justify-content: space-evenly;
+    a {
+        background: linear-gradient(95.77deg, #43cbff 15.8%, #9708cc 86.18%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-top: 0.3em;
+    }
+    p{
+        margin-top: 0.5em;
+    }
+}
+
+select {
+    background-color:$black-blue;
+    color: white;
+    border-radius: 0.1em;
+    width: 10rem;
+    padding: 0.4em;
+}
+
+.room-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 4.5rem;
+    padding: 2rem 4rem;
+    background-color: $black-grey;
+    border: 2px solid white;
+    border-image: $gradient;
+    border-image-slice: 1;
+    h2 {
+        font-size: 2.7rem;
+        margin: 0 auto;
+        margin-bottom: 1em;
+    }
+    input {
+        color: white;
+        font-size: 1rem;
+        min-width: 125px;
+        width: 90%;
+        margin: 0.5em auto;
+        padding: 0.8rem;
+        background-color: $black-blue;
+        &:last-child{
+            width: 40%;
+        }
+    }
+    textarea {
+        color: white;
+        font-size: 1rem;
+        min-width: 125px;
+        width: 90%;
+        margin: 0.5em auto;
+        padding: 0.8rem;
+        background-color: $black-blue;
+    }
+    a {
+        margin: 0.5em auto;
+        color: $font-trans;
+    }
+}

@@ -1,0 +1,28 @@
+{% extends 'main.html' %} {%load static%} {% block content %}
+
+<style></style>
+
+<div class="profile-container">
+    <div class ="user-info">
+        <h3>{{request.user}}</h3>
+        <img src="{%static 'images/ayta.png'%}" alt="" class="profile-user" />
+        <div>
+            <h4>Информация о пользователе</h4>
+            <span>Читаемые темы</span>
+            {%for topic in topics%}
+                <p>{{topic.name}}</p>
+            {%endfor%}
+        </div>
+        <a href="{%url 'update-user'%}">Редактировать профиль</a>
+        
+    </div>
+
+    <div>
+
+        {% include 'base/feed_components.html' %}
+    </div>
+
+    <div> {% include 'base/activity_component.html' %} </div>
+</div>
+
+{% endblock content %}

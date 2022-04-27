@@ -1,0 +1,71 @@
+{%extends 'main.html' %} {%load static%} {%block content%}
+<div class="room-container">
+    <div class="host">
+        <a href="{%url 'home'%}"
+            ><div id="host-home-link" class="home-link"
+                ><img src="{%static 'images/back.png'%}" alt="" /></div
+        ></a>
+        <div class="host-info">
+            <div id="1">
+                <a href="{%url 'user-profile' request.user.id%}">
+                    <img
+                        src="{%static 'images/circle.png'%}"
+                        alt=""
+                        class="auth-image"
+                    />
+                </a>
+                <span>@{{room.host.username}}</span>
+            </div>
+            <div>
+                <small class="btn-room">{{room.topic.name}}</small>
+                {%if request.user == room.host%}
+                <a class="btn-room" href="{% url 'update-room' room.id %}">Редактировать чат</a>
+                {%endif%}
+                
+            </div>
+        </div>
+    </div>
+    <div class="room-info">
+        <h1>{{room.name}}</h1>
+        <p>{{room.description}}</p>
+    </div>
+
+    <div class="comment-wrapper">
+        {%for message in room_messages%}
+        <div class="comment-cont">
+            <a href="{%url 'user-profile' request.user.id%}">
+                <img
+                    src="{%static 'images/circle.png'%}"
+                    alt=""
+                    class="auth-image"
+                />
+            </a>
+            <div class="com-body">
+                <p
+                    >@{{message.user}} <small>{{message.created|timesince}} назад</small>
+                    </p
+                >
+                <p>{{message.body}}</p>
+                {%if request.user == message.user%}
+                <a href="{%url 'delete-message' message.id%}">Удалить</a>
+                {%endif%}
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+
+    {%if request.user.is_authenticated%}
+    <div class="comment-form">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input
+                type="text"
+                name="body"
+                placeholder="Добавить новый комментарий..."
+            />
+        </form>
+    </div>
+    {%endif%}
+</div>
+
+{%endblock content%}

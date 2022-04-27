@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+<div>
+    <form class = "room-form" method="POST" action="">
+        {%if page == 'update-room'%}
+        <h2>Редактировать чат</h2>
+        {%else%}
+        <h2>Создать чат</h2>
+        {%endif%}
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Сохранить"/>
+    </form>
+</div>
+
+{% endblock content %}

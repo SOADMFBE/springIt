@@ -1,0 +1,23 @@
+{%load static%}
+<div class="feed-cont">
+    <h5>{{room_count}} чатов доступно</h5>
+    {% for room in rooms %}
+    <div class="feed-item">
+        <!-- {%if request.user == room.host%}
+        <a href="{% url 'update-room' room.id %}">Edit</a>
+        <a href="{%url 'delete-room' room.id%}">Delete</a>
+        {%endif%} -->
+        <div class="first-feed">
+            <div class="user-feed">
+                <img src="{%static 'images/circle.png'%}" class="feed-image"/>
+                <a href="{%url 'user-profile' room.host.id%}">@{{room.host.username}}</a>
+            </div>
+            <div class="stat-feed">
+                <small>{{room.topic.name}}</small>
+            </div>
+        </div>
+        <h3><a href="{%  url 'room' room.id %}"> {{room.name}}</a></h3>
+        
+    </div>
+    {% endfor %}
+</div>

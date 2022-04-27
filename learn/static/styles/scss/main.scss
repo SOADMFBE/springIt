@@ -1,0 +1,22 @@
+@import '_nullstyle';
+@import '_mixins';
+@import '_home';
+@import '_navbar';
+@import '_login';
+@import '_room';
+@import '_profile';
+@import '_update';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: $fw;
+    color: $font-color;
+    background-color: $black;
+    hyphens: auto;
+    a {
+        color: white;
+    }
+}

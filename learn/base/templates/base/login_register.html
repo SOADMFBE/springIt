@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{%static 'main.css' %}">
+        <title>l&C</title>
+    </head>
+    <body>
+        {%block content%}
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %} 
+        {%if page == 'login'%}
+        
+        <div class="login-cont">
+            <a href="{%url 'home'%}"><div class="home-link"><img src="{%static 'images/back.png'%}" alt=""></div></a>
+            <form class="login_form" method="POST" action="">
+                {%csrf_token%}
+                <h2>Авторизация</h2>
+                <input type="text" name="username" placeholder="username" />
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="enter password"
+                />
+                <div class="sub-login">
+                    <a id="login_hover" href="{%url 'register'%}">Регистрация</a>
+                    <input id="login_hover" type="submit" value="Войти" />
+                </div>
+            </form>
+        </div>
+
+        {%else%}
+
+        <div class="reg-cont">
+            <a href="{%url 'home'%}"><div class="home-link"><img src="{%static 'images/back.png'%}" alt=""></div></a>
+            <form class="reg_form" method="POST" action="">
+                {%csrf_token%} 
+                <h2>Регистрация</h2>
+                {%for field in form%}
+                <div class="form__group">
+                    <label for="profile_pic">{{field.label}}</label>
+                    {{field}}
+                </div>
+                {%endfor%}
+                <input id="login_hover" type="submit" value="Регистрация" />
+                <a  href="{%url 'login'%}">Уже есть аккаунт ?</a>
+
+            </form>
+        </div>
+        {%endif%} {%endblock content%}
+    </body>
+</html>

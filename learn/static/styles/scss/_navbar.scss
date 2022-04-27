@@ -1,0 +1,67 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  1rem 7.1em;
+    background-color: $black-grey;
+    width: 100%;
+
+    .logo {
+        font-size: 3rem;
+        margin-right: 2em;
+        
+        img{
+            object-fit: scale-down  ;
+            height: 50px;
+        }
+    }
+    div {
+        display: flex;
+        align-items: center;
+    }
+    .auth-container {
+        a{
+            margin-right: 2em;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    a {
+        font-size: 1rem;
+    }
+    form {
+        width: 60%;
+    }
+}
+
+.avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin-right: 2em;
+    object-fit: scale-down;
+}
+
+.auth-image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: scale-down;
+    border: 0.1rem solid white;
+}
+
+
+
+.searchbar {
+    color: white;
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    padding:0.9em;
+    width: 80%;
+    background-color: $black-grey;
+        border: 2px solid white ;
+        border-image:$gradient;
+        border-image-slice: 1;
+}
+

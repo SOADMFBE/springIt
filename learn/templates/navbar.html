@@ -1,0 +1,24 @@
+{%load static%}
+<nav class="navbar">
+    <a class="logo" href="/">
+        <img  src="{%static 'images/logo.png'%}" alt="">
+    </a>
+    <form method="GET" action="{%url 'home'%}">
+        <input class="searchbar" type="text" name="q" placeholder="Поиск по названию темы" />
+    </form>
+    {%if request.user.is_authenticated%}
+    <div class="auth-container"
+        ><a href="{%url 'user-profile' request.user.id%}">
+            <img src="{%static 'images/ayta.png'%}" alt="" class="auth-image" />
+        </a>
+        <a href="{%url 'logout'%}">Выйти</a></div
+    >
+
+    {%else%}
+    <div class="auth-container"
+        ><a href=""><img src="{%static 'images/circle.png'%}" alt="" /></a>
+        <a href="{%url 'login'%}">Войти</a></div
+    >
+
+    {%endif%}
+</nav>

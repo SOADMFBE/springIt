@@ -1,0 +1,16 @@
+{%load static%}
+<div class="topic-cont">
+    
+    <a href="{%url 'create-room' %}"><div class="topic-item" id="createRoom"><img src="{%static 'images/plus.png'%}" alt="" />Создать чат</div></a>
+
+    
+    <a href="{%url 'home' %}"><div class="topic-item">Все темы</div></a>
+
+    {% for topic in topics %}
+
+    <a href="{%url 'home' %}?q={{topic.name}}"
+        ><div class="topic-item"> {{topic.name}}</div></a
+    >
+
+    {%endfor%}
+</div>

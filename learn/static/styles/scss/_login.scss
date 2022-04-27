@@ -1,0 +1,112 @@
+.login_form {
+    background-color: $black-blue;
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: 0 auto;
+    margin-top: 4.5rem;
+    padding: 2rem 4rem;
+    background-color: $black-grey;
+    border: 2px solid white;
+    border-image: $gradient;
+    border-image-slice: 1;
+    h2 {
+        font-size: 2.7rem;
+        margin: 0 auto;
+        margin-bottom: 1em;
+    }
+    input {
+        color: white;
+        font-size: 1rem;
+        min-width: 125px;
+        width: 90%;
+        margin: 0.5em auto;
+        padding: 0.8rem;
+        background-color: $black-blue;
+        &:last-child {
+            height: inherit;
+            background-color: $black-grey;
+            color: white;
+            margin: 0;
+        }
+    }
+}
+
+.sub-login {
+    margin-top: 2em;
+    display: flex;
+    a {
+        margin-right: 2em;
+        padding: 0.8rem;
+    }
+    margin: 0 auto;
+    align-items: center;
+    #login_hover {
+        &:hover {
+            background: $gradient;
+        }
+    }
+}
+
+.login-cont {
+    display: flex;
+}
+
+.home-link {
+    position: absolute;
+    top: 5rem;
+    left: 30rem;
+    background-color: $black-grey;
+    border: 2px solid white;
+    border-image: $gradient;
+    border-image-slice: 1;
+    padding: 0.4em;
+}
+
+.reg-cont {
+    display: flex;
+}
+.reg_form {
+    background-color: $black-blue;
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: 0 auto;
+    margin-top: 4.5rem;
+    padding: 2rem 4rem;
+    background-color: $black-grey;
+    border: 2px solid white;
+    border-image: $gradient;
+    border-image-slice: 1;
+    h2 {
+        font-size: 2.7rem;
+        margin: 0 auto;
+        margin-bottom: 1em;
+    }
+    input {
+        color: white;
+        font-size: 1rem;
+        min-width: 125px;
+        width: 90%;
+        margin: 0.5em auto;
+        padding: 0.8rem;
+        background-color: $black-blue;
+        &:last-child {
+            height: inherit;
+            background-color: $black-grey;
+            color: white;
+            margin: 0;
+        }
+    }
+    a {
+        margin: 0.5em auto;
+        color: $font-trans;
+    }
+}
+.form-group {
+    display: flex;
+    color: white;
+    input {
+        background-color: white;
+    }
+}
